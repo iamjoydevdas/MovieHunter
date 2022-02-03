@@ -21,4 +21,6 @@ public class Movie {
 	private LocalDate releaseDate;
 	private String country;
 	private String genere;
+	
+	
 }

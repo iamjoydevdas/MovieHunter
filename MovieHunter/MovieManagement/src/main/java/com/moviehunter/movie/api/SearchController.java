@@ -22,11 +22,11 @@ public class SearchController {
 	@RequestMapping(value="/cities", method= RequestMethod.GET)
 	public ResponseEntity<List<City>> getCities() {
 		List<City> list = new ArrayList<>();
-		Iterable<City> findAll = searchRepository.findAll();
-		findAll.forEach(city -> {
-			list.add(city);
-			System.out.println(city);
-		});
-		return new ResponseEntity<List<City>>(list, HttpStatus.OK);
+		List<City> allCity = searchRepository.getAllCity();
+		/*
+		 * Iterable<City> findAll = searchRepository.getAllCity(); findAll.forEach(city
+		 * -> { list.add(city); });
+		 */
+		return new ResponseEntity<List<City>>(allCity, HttpStatus.OK);
 	}
 }

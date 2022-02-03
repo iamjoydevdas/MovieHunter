@@ -13,16 +13,16 @@ import lombok.ToString;
 @Data
 @ToString
 @Entity
-@Table(name="CITY")
+//@Table(name="CITY")
 public class City {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="CITY_ID")
 	private Integer cityId;
-	//@Column(name="CITY_NAME")
+	@Column(name="CITY_NAME")
 	private String cityName;
-	//@Column(name="CITY_STATE")
+	@Column(name="CITY_STATE")
 	private String cityState;
-	//@Column(name="CITY_PIN")
+	@Column(name="CITY_PIN")
 	private String cityPin;
 }

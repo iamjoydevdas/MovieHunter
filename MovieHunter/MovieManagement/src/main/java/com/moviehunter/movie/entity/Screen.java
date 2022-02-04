@@ -19,11 +19,9 @@ public class Screen {
 	private Integer screenTheatreId;
 	
 	@OneToMany(cascade=CascadeType.ALL, mappedBy="movieShowScreenId")
-//	@JoinColumn(name="screenId")
 	private List<MovieShow> movieShow;
+	
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="screenTheatreSeatId")
+	private List<ScreenSeat> screenSeats;
 }
 
-/*
- * SCREEN_ID INT(4) NOT NULL AUTO_INCREMENT, SCREEN_NAME VARCHAR(64) NOT NULL,
- * TOTAL_SEATS INT(4) NULL NULL, SCREEN_THEATRE_ID INT(4) NOT NULL,
- */

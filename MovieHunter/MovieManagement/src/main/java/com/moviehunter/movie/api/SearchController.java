@@ -17,8 +17,11 @@ import com.moviehunter.movie.repo.CityRepository;
 import com.moviehunter.movie.repo.MovieRepository;
 import com.moviehunter.movie.repo.TheatreRepository;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 
+@Api
 @RestController
 @AllArgsConstructor
 public class SearchController {
@@ -26,6 +29,8 @@ public class SearchController {
 	private final TheatreRepository theatreRepository;
 	private final MovieRepository movieRepository;
 	
+	
+	@ApiOperation(value="/cities")
 	@RequestMapping(value="/cities", method= RequestMethod.GET)
 	public ResponseEntity<List<City>> getCities() {
 		List<City> allCity = searchRepository.getAllCity();

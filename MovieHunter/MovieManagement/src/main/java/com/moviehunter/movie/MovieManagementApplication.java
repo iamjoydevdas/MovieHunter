@@ -9,7 +9,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  *
  */
 @EnableEurekaClient
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages="com.moviehunter")
 public class MovieManagementApplication 
 {
     public static void main( String[] args )

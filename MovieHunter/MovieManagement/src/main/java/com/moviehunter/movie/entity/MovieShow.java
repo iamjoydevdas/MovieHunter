@@ -30,6 +30,9 @@ public class MovieShow {
 	@JoinColumn(name="MOVIE_SHOW_MOVIE_ID")
 	private Movie movie;
 	
-	@OneToMany(cascade=CascadeType.ALL, mappedBy="bookingMovieShowId")
-	private List<Booking> booking;
+	//@OneToMany(cascade=CascadeType.ALL, mappedBy="bookingMovieShowId")
+	//private List<Booking> booking;
+	
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="movieShowId")
+	private List<ShowSeat> tickets;
 }

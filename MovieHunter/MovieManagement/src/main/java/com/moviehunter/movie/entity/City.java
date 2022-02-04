@@ -2,6 +2,7 @@ package com.moviehunter.movie.entity;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -36,7 +37,7 @@ public class City {
 	@Column(name="CITY_PIN")
 	private String cityPin;
 	
-	@OneToMany(fetch=FetchType.LAZY, mappedBy = "cityId")
+	@OneToMany(fetch=FetchType.LAZY, mappedBy = "cityId", cascade=CascadeType.ALL)
 	private List<Theatre> theatres;
 
 	public City(Integer cityId, String cityName, String cityState, String cityPin) {

@@ -1,9 +1,12 @@
 package com.moviehunter.movie.entity;
 
 import java.time.LocalDate;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import lombok.Data;
 
@@ -17,6 +20,7 @@ public class Booking {
 	private String bookingStatus;
 	private Integer bookingMovieShowId;
 	
-	private 
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="bookingId")
+	private List<ShowSeat> tickets;
 }
 

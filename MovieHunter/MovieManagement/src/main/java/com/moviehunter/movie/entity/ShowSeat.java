@@ -9,7 +9,7 @@ import lombok.Data;
 @Entity
 public class ShowSeat {
 	@Id
-	private Integer id;
+	private Integer showSeatId;
 	private String showSeatStatus;
 	private Integer screenSeatId;
 	private Integer movieShowId;

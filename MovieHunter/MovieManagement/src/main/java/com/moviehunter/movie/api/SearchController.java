@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.moviehunter.movie.entity.City;
 import com.moviehunter.movie.entity.Movie;
 import com.moviehunter.movie.entity.Theatre;
+import com.moviehunter.movie.payload.Payload;
 import com.moviehunter.movie.repo.CityRepository;
 import com.moviehunter.movie.repo.MovieRepository;
 import com.moviehunter.movie.repo.TheatreRepository;
@@ -53,6 +55,11 @@ public class SearchController {
 	
 	@RequestMapping(value="/movies", method= RequestMethod.GET)
 	public ResponseEntity<List<Movie>> getMovies() {
+		return new ResponseEntity<>(movieRepository.getAllMovies(), HttpStatus.OK);
+	}
+	
+	@RequestMapping(value="/search", method= RequestMethod.POST)
+	public ResponseEntity<List<Movie>> searchResults(@RequestBody Payload payload) {
 		return new ResponseEntity<>(movieRepository.getAllMovies(), HttpStatus.OK);
 	}
 }
